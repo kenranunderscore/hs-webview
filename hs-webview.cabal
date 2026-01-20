@@ -1,6 +1,6 @@
 cabal-version:      3.6
 name:               hs-webview
-version:            0.1.0.0
+version:            0.1.1.0
 license:            MIT
 license-file:       LICENSE
 tested-with:        GHC ==9.10.3
@@ -20,7 +20,9 @@ source-repository head
   location: https://github.com/micharied/hs-webview.git
 
 library
-  exposed-modules:      WebView
+  exposed-modules:      WebView,
+                        WebView.Extras
+  other-modules:        WebView.Internal
   hs-source-dirs:       src
   default-language:     Haskell2010
   build-depends:        base >=4.14 && <5
@@ -44,6 +46,7 @@ executable demo
   build-depends:       base >=4.14 && <5,
                        hs-webview,
                        text >=1.2,
+                       time >=1.9,
                        scotty >=0.13
   ghc-options:         -Wall -threaded
   if os(darwin)

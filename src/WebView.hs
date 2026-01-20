@@ -12,6 +12,7 @@ module WebView
   , setSize
   , setHtml
   , navigate
+  , reload
   , withWebView
   ) where
 
@@ -21,7 +22,7 @@ import Foreign.C.Types (CInt (..))
 import Foreign.Marshal.Utils (fromBool)
 import Foreign.Ptr (Ptr, nullPtr)
 
-newtype WebView = WebView (Ptr ())
+import WebView.Internal (WebView (..))
 
 -- | Window sizing hints understood by webview.
 data WebViewHint
@@ -55,6 +56,9 @@ setHtml (WebView ptr) html = withCString html (c_webview_set_html ptr)
 
 navigate :: WebView -> String -> IO ()
 navigate (WebView ptr) url = withCString url (c_webview_navigate ptr)
+
+reload :: WebView -> IO ()
+reload (WebView ptr) = withCString reloadScript (c_webview_eval ptr)
 
 withWebView :: Bool -> (WebView -> IO a) -> IO a
 withWebView debug = bracket (create debug) destroy
@@ -90,3 +94,9 @@ foreign import ccall unsafe "webview_set_html"
 
 foreign import ccall unsafe "webview_navigate"
   c_webview_navigate :: Ptr () -> CString -> IO ()
+
+foreign import ccall unsafe "webview_eval"
+  c_webview_eval :: Ptr () -> CString -> IO ()
+
+reloadScript :: String
+reloadScript = "window.location.reload();"

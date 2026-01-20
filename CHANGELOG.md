@@ -7,7 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- No changes yet.
+### Added
+
+## [0.1.1.0] - 2025-12-18
+
+### Added
+
+- Added a macOS Edit menu so standard copy/cut/paste/select-all shortcuts work
+  in the bundled webview (plus undo/redo).
+- Add reload helper and optional reload shortcuts (Cmd/Ctrl+R, F5).
 
 ## [0.1.0.0] - 2025-12-18
 

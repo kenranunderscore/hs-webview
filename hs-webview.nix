@@ -1,7 +1,7 @@
 { mkDerivation, base, lib, scotty, text, platformPkgconfigDeps ? [ ], src ? ./. }:
 mkDerivation {
   pname = "hs-webview";
-  version = "0.1.0.0";
+  version = "0.1.1.0";
   src = src;
   isLibrary = true;
   isExecutable = true;

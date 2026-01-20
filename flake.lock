@@ -59,16 +59,16 @@
     "webview": {
       "flake": false,
       "locked": {
-        "lastModified": 1766056324,
-        "narHash": "sha256-wJOZYe8gI94hGPzJ8fX4haiWb4iPK+dgzuTxJpBTJQU=",
+        "lastModified": 1768915445,
+        "narHash": "sha256-V8sZUnwJBXdbrsmTekzVlKrgJg2CGQwtN+pqR1KyjIc=",
         "owner": "micharied",
         "repo": "webview",
-        "rev": "7c5eb84744d88b7fb2338803e74c8fc35320b6b4",
+        "rev": "787e7ca799faccf7777bb9bb53c537686c0b9b3c",
         "type": "github"
       },
       "original": {
         "owner": "micharied",
-        "ref": "fix-load-frameworks",
+        "ref": "develop",
         "repo": "webview",
         "type": "github"
       }
