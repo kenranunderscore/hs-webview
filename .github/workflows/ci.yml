@@ -13,6 +13,7 @@ jobs:
     - uses: cachix/install-nix-action@v25
       with:
         nix_path: nixpkgs=channel:nixos-unstable
+        set_as_trusted_user: false # Disable adding user to trusted-users to avoid eDSRecordAlreadyExists error
     - uses: cachix/cachix-action@v14
       with:
         name: hs-webview
