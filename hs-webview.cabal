@@ -30,13 +30,8 @@ library
   cxx-sources:          cbits/webview.cc
   include-dirs:         cbits/include
   cxx-options:          -std=c++17 -DWEBVIEW_STATIC
-  if os(darwin)
-    frameworks:        Cocoa, WebKit
-    extra-libraries:   c++
-    ld-options:        -framework Cocoa -framework WebKit
-  else
-    pkgconfig-depends: gtk+-3.0, webkit2gtk-4.1, x11
-    extra-libraries:   stdc++
+  pkgconfig-depends: gtk+-3.0, webkit2gtk-4.1, x11
+  extra-libraries:   stdc++, gtk-3, X11
 
 executable demo
   main-is:             Main.hs
@@ -49,10 +44,5 @@ executable demo
                        time >=1.9,
                        scotty >=0.13
   ghc-options:         -Wall -threaded
-  if os(darwin)
-    frameworks:        Cocoa, WebKit
-    extra-libraries:   c++
-    ld-options:        -framework Cocoa -framework WebKit
-  else
-    pkgconfig-depends: gtk+-3.0, webkit2gtk-4.1, x11
-    extra-libraries:   stdc++
+  pkgconfig-depends: gtk+-3.0, webkit2gtk-4.1, x11
+  extra-libraries:   stdc++, gtk-3, X11
