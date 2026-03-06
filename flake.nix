@@ -2,7 +2,7 @@
   description = "hs-webview - Haskell bindings for webview";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     webview = {
       url = "github:micharied/webview?ref=develop";
